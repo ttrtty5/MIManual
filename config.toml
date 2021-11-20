@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://ttrtty5.github.io/MIManual/public/'
 languageCode = 'zh-cn'
 title = 'MIV 文档'
 theme = 'learn'

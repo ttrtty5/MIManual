@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>物体 on MIV 文档</title>
+    <link>http://example.org/%E7%89%A9%E4%BD%93/</link>
+    <description>Recent content in 物体 on MIV 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="http://example.org/%E7%89%A9%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>app</title>
+      <link>http://example.org/%E7%89%A9%E4%BD%93/app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E7%89%A9%E4%BD%93/app/</guid>
+      <description>事件 创建事件: app_event_create()
+每帧更新事件: app_event_step()
+绘制事件: app_event_draw()
+实例变量 debug_info(布尔)
+startup_last_crash(布尔)
+startup_error(布尔)
+tl_edit(int) id value_name_list
+value_default 在project_reset()中初始化</description>
+    </item>
+    
+    <item>
+      <title>obj_timeline</title>
+      <link>http://example.org/%E7%89%A9%E4%BD%93/obj_timeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E7%89%A9%E4%BD%93/obj_timeline/</guid>
+      <description>描述 物体在时间线的上数据对象
+对象属性 save_id = &amp;quot;&amp;quot; 存储id value[v] = value_default[v] 根据e_value_type填充的关键帧属性
+save_id = &amp;quot;&amp;quot; 存储idloaded = falsetype = nulltype_name = &amp;quot;&amp;quot;name = &amp;quot;&amp;quot;display_name = &amp;quot;&amp;quot;temp = nulltext = text_get(&amp;quot;timelineeditortextsample&amp;quot;)color = make_color_hsv(random(255), 255, 128)lock = falsehide = falsedepth = 0model_part = nullmodel_part_name = &amp;quot;&amp;quot;model_shape_vbuffer_map = nullmodel_shape_alpha_map = nullpart_of = nullpart_list = nullpart_root = nullscenery_animate = falsefor (var v = 0; v &amp;lt; e_value.</description>
+    </item>
+    
+  </channel>
+</rss>

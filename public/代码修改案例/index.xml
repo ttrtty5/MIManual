@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码修改案例 on MIV 文档</title>
+    <link>http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/</link>
+    <description>Recent content in 代码修改案例 on MIV 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>添加UI</title>
+      <link>http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/</guid>
+      <description>比如需要添加一个bezier曲线参数的滑动条
+先定义ui控制的变量, 在enums.gml文件第103行
+enum e_value{POS_X,POS_Y,POS_Z,ROT_X,.......amount} 在amount的前面添加你要添加的参数 如BEZIERY
+enum e_value{POS_X,POS_Y,POS_Z,ROT_X,.......BEZIERY.amount} 然后在app_startup_lists.gml的第14行内value_name_list列表添加你想添加的参数的命名, 尽量对应
+ds_list_add(value_name_list,&amp;quot;POS_X&amp;quot;,&amp;quot;POS_Y&amp;quot;,&amp;quot;POS_Z&amp;quot;,.....&amp;quot;BEZIERY&amp;quot;} 在tl_value_defaul.gml中设置参数的默认值
+然后找到你要添加ui的地方, 比如在tab_frame_editor_keyframe.gml里
+此时只完成了对参数的声明, 以及ui填入参数的方式, 还需要在tl_update_values中选择对参数的插值方式
+比如
+tl_update_values_ease(e_value.BEZIER, &amp;quot;instant&amp;quot;, 0) 此时只需要在对应的更新事件脚本中调用tl_edit.value[e_value.BEZIER]获取参数并做你想做的事就行了
+注: value_name_list和e_value的长度一定要对应, 不然会报错</description>
+    </item>
+    
+    <item>
+      <title>添加及使用shader</title>
+      <link>http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0%E5%8F%8A%E4%BD%BF%E7%94%A8shader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0%E5%8F%8A%E4%BD%BF%E7%94%A8shader/</guid>
+      <description>首先是给2d用的shader流程
+新建及使用2d shader 在Resources窗口中的shader一栏, 新建一个shader, 这里我命名为shader0
+给物体添加一个Draw事件, 在其中写入
+shader_set(shader0); // 设置物体的shader为shader0draw_self(); // 绘制用了shader的spriteshader_reset(); // 如果没这一行, 下次绘制将不更新shader 传参给shader 比如我们定义一个color1参数, 由键盘按下→键事件改变color1参数, 传入shader
+在物体的create事件中写入
+color1_var = [0,1,0,1]; // 在脚本中的变量uni_color1 = shader_get_uniform(shader0,&amp;quot;color1&amp;quot;); // 获取在shader里的color1变量指针 变量修改, 在其他脚本修改color1_var即可, 比如在键盘按下→键事件中写 color1_var[1] -=0.1;
+在draw事件中写
+shader_set(shader0); // 设置物体的shader为shader0shader_set_uniform_f_array(uni_color1, color1_var); // 通过shader里的变量的地址指针传入在脚本里的变量draw_self(); // 绘制用了shader的spriteshader_reset(); // 如果没这一行, 下一个object也将使用这个shader, 直到shader_reset为止 在shader0的fsh文件中, 最顶上的声明变量中添加uniform vec4 color1;
+varying vec2 v_vTexcoord;varying vec4 v_vColour;uniform vec4 u_color;uniform vec4 color1; 传递纹理则是用 glassshader_bgsampler = shader_get_sampler_index(GlassShader, &amp;ldquo;s_BackgroundSampler&amp;rdquo;) spr = sprite_get_texture(sprite_index, 0); shader_set(GlassShader); texture_set_stage(glassshader_bgsampler, spr); shader_reset();</description>
+    </item>
+    
+  </channel>
+</rss>

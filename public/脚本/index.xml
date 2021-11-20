@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>脚本 on MIV 文档</title>
+    <link>http://example.org/%E8%84%9A%E6%9C%AC/</link>
+    <description>Recent content in 脚本 on MIV 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="http://example.org/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>access_error()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/access_error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/access_error/</guid>
+      <description>描述 当获取working_directory工作目录路径失败时, 调用此函数告诉用户使用管理员权限运行.</description>
+    </item>
+    
+    <item>
+      <title>app_event_create()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/app_event_create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/app_event_create/</guid>
+      <description>描述 应用程序的入口点。
+内容流程 声明全局变量 debug_indent, debug_timer;
+声明枚举
+随机化种子
+启动程序 app_startup()
+若启动失败则触发game_end()游戏结束事件</description>
+    </item>
+    
+    <item>
+      <title>app_event_draw()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/app_event_draw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/app_event_draw/</guid>
+      <description>描述 绘制程序的入口点
+内容流程 全局变量
+delta 每帧之间相差时间
+设置字体
+设置字体颜色
+调用窗口绘制函数 window_draw()</description>
+    </item>
+    
+    <item>
+      <title>app_startup()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/app_startup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/app_startup/</guid>
+      <description>内容流程 启动日志系统 log_startup()
+加载外部程序dll lib_startup()
+文件系统检测是否可用 file_lib_startup()
+检测是否存在 地图导入exe, 配置文件&amp;quot;legacy.midata&amp;quot;, 语言文件&amp;quot;english.milanguage&amp;quot;
+3d系统 顶点初始化 vertex_format_startup()
+内部数据列表初始化 app_startup_lists()
+声明app实例的一堆属性 app_startup_window()
+声明app实例的关于alert的属性 alert_startup
+声明json解析会用到的变量 json_startup()
+做好加载settings的准备并加载settings settings_startup()
+project_startup()
+render_startup()
+camera_startup()
+做好加载mc资产包的准备并加载mc资产包 minecraft_assets_startup 里面的minecraft_assets_load_startup_version()才是加载</description>
+    </item>
+    
+    <item>
+      <title>app_startup_lists()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/app_startup_lists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/app_startup_lists/</guid>
+      <description>内容流程 填充 value_name_list
+填充过渡曲线类型列表 transition_list
+填充语言字典 language_map
+声明全局变量 globalvar value_name_list, transition_list;globalvar temp_type_name_list, tl_type_name_list, res_type_name_list;globalvar videotemplate_list, videoquality_list;globalvar language_english_map, language_map;globalvar camera_values_list, camera_values_copy, camera_use_default_list;globalvar minecraft_color_name_list, minecraft_color_list, minecraft_banner_pattern_list, minecraft_banner_pattern_short_list;globalvar biome_list, particle_template_list, particle_template_map;globalvar blend_mode_list, blend_mode_map; </description>
+    </item>
+    
+    <item>
+      <title>app_startup_window()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/app_startup_window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/app_startup_window/</guid>
+      <description>globalvar current_step, minute_steps, delta;current_step = 0minute_steps = 60 * 60delta = 1log(&amp;quot;Windows startup&amp;quot;)http_assets = nullhttp_download_assets_file = nullhttp_download_assets_zip = nullhttp_alert_news = nullhttp_downloadskin = nullwindow_width = 1window_height = 1window_set_focus()window_set_min_width(100)window_set_min_height(100)window_set_caption(&amp;quot;Mine-imator&amp;quot;)window_state = &amp;quot;&amp;quot;window_busy = &amp;quot;&amp;quot;window_focus = &amp;quot;&amp;quot;window_glow_top = 0window_glow_right = 0window_glow_bottom = 0window_glow_left = 0window_cover = 1mouse_cursor = cr_defaultmouse_current_x = 0mouse_current_y = 0mouse_previous_x = 0mouse_previous_y = 0mouse_move = 0mouse_still = 0app_mouse_clear()dragger_drag_value = 0meter_drag_value = 0wheel_drag_value = 0wheel_drag_moon = falsesortlist_resize = nullsortlist_resize_column = 0sortlist_resize_column_x = 0content_x = 0content_y = 0content_width = 0content_height = 0content_mouseon = falsecontent_tab = nullcontent_direction = nulldx = 0dy = 0dw = 0dh = 0dx_start = 0dy_start = 0dw_start = 0dh_start = 0tab = nulltab_control_h = 0// Tipstip_show = falsetip_alpha = 0tip_text = &amp;quot;&amp;quot;tip_text_wrap = &amp;quot;&amp;quot;tip_x = 0tip_y = 0tip_w = 0tip_h = 0tip_box_x = 0tip_box_y = 0tip_maxwid = 270tip_padding = 10tip_location_x = 0tip_location_y = 0tip_wrap = truetip_shortcut_key = -1tip_shortcut_control = false// Popupspopup = nullpopup_ani = 0popup_ani_type = &amp;quot;&amp;quot;popup_switch_to = nullpopup_switch_from = nullpopup_mouseon = false </description>
+    </item>
+    
+    <item>
+      <title>window_draw()</title>
+      <link>http://example.org/%E8%84%9A%E6%9C%AC/window_draw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/%E8%84%9A%E6%9C%AC/window_draw/</guid>
+      <description>内容流程 根据app实例变量 window_state 调用window_draw_load_assets(), window_draw_new_assets(), window_draw_exportmovie()
+绘制panel区域 panel_area_draw()
+绘制窗口移动时的发光效果 window_draw_glow()
+工具栏绘制 toolbar_draw()
+window_draw_cover()
+window_draw_timeline_move()
+toolbar_draw_alerts()
+绘制下拉菜单 menu_draw()
+绘制提示 tip_draw()
+debug信息绘制 debug_info_draw()</description>
+    </item>
+    
+  </channel>
+</rss>

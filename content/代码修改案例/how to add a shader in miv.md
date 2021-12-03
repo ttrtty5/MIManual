@@ -1,6 +1,6 @@
 ---
 title: "how to add a shader in miv"
-draft: true
+draft: false
 ---
 
 ### how to add a post-progress shader in mine-imator

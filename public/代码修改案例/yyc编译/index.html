@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/MIManual/public/images/favicon.png" type="image/png">
 
-    <title>添加UI :: MIV 文档</title>
+    <title>代码修改案例 :: MIV 文档</title>
 
     
     <link href="/MIManual/public/css/nucleus.css?1638544884" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/">
+  <body class="" data-url="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/yyc%E7%BC%96%E8%AF%91/">
     <nav id="sidebar" class="">
 
 
@@ -166,7 +166,7 @@
  
   
     
-      <li data-nav-id="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/yyc%E7%BC%96%E8%AF%91/" title="代码修改案例" class="dd-item ">
+      <li data-nav-id="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/yyc%E7%BC%96%E8%AF%91/" title="代码修改案例" class="dd-item active">
         <a href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/yyc%E7%BC%96%E8%AF%91/">
         代码修改案例
         
@@ -208,7 +208,7 @@
  
   
     
-      <li data-nav-id="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/" title="添加UI" class="dd-item active">
+      <li data-nav-id="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/" title="添加UI" class="dd-item ">
         <a href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0ui/">
         添加UI
         
@@ -578,7 +578,7 @@
             
           
           
-            <a href='/MIManual/public/'>目录</a> > <a href='/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/'>代码修改案例</a> > 添加UI
+            <a href='/MIManual/public/'>目录</a> > <a href='/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/'>代码修改案例</a> > 代码修改案例
           
         
           
@@ -607,55 +607,19 @@
           
             <h1>
               
-              添加UI
+              代码修改案例
             </h1>
           
 
         
 
 
-<p>比如需要添加一个bezier曲线参数的滑动条</p>
-<p>先定义ui控制的变量, 在enums.gml文件第103行</p>
-<pre><code>enum e_value
-{
-	POS_X,
-	POS_Y,
-	POS_Z,
-	ROT_X,
-	.......
-	amount
-}
-</code></pre>
-<p>在amount的前面添加你要添加的参数
-如BEZIERY</p>
-<pre><code>enum e_value
-{
-	POS_X,
-	POS_Y,
-	POS_Z,
-	ROT_X,
-	.......
-	BEZIERY.
-	amount
-}
-</code></pre>
-<p>然后在app_startup_lists.gml的第14行内value_name_list列表添加你想添加的参数的命名, 尽量对应</p>
-<pre><code>ds_list_add(value_name_list,
-	&quot;POS_X&quot;,
-	&quot;POS_Y&quot;,
-	&quot;POS_Z&quot;,
-.....
-	&quot;BEZIERY&quot;
-}
-</code></pre>
-<p>在tl_value_defaul.gml中设置参数的默认值</p>
-<p>然后找到你要添加ui的地方, 比如在tab_frame_editor_keyframe.gml里</p>
-<p>此时只完成了对参数的声明, 以及ui填入参数的方式, 还需要在tl_update_values中选择对参数的插值方式</p>
-<p>比如</p>
-<pre><code>tl_update_values_ease(e_value.BEZIER, &quot;instant&quot;, 0)
-</code></pre>
-<p>此时只需要在对应的更新事件脚本中调用tl_edit.value[e_value.BEZIER]获取参数并做你想做的事就行了</p>
-<p>注: value_name_list和e_value的长度一定要对应, 不然会报错</p>
+<p><a href="https://help.yoyogames.com/hc/en-us/articles/235186048-Setting-Up-For-Windows">https://help.yoyogames.com/hc/en-us/articles/235186048-Setting-Up-For-Windows</a>
+在这里，您的Visual Studio 位置需要如下（假设您在其默认位置安装了 Visual Studio）：</p>
+<p>VS2015：C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat 
+VS2017：C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat 
+VS2019：C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat</p>
+<p>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat</p>
 
 
 <footer class="footline">
@@ -745,6 +709,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -776,26 +760,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1012,10 +976,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E4%B8%BAmi%E6%B7%BB%E5%8A%A0%E5%90%8E%E5%A4%84%E7%90%86%E7%9D%80%E8%89%B2%E5%99%A8/" title="如何为mi添加后处理着色器"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/how-to-add-a-shader-in-miv/" title="how to add a shader in miv"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E6%B7%BB%E5%8A%A0%E5%8F%8A%E4%BD%BF%E7%94%A8shader/" title="添加及使用shader" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/MIManual/public/%E4%BB%A3%E7%A0%81%E4%BF%AE%E6%94%B9%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E4%B8%BAmi%E6%B7%BB%E5%8A%A0%E5%90%8E%E5%A4%84%E7%90%86%E7%9D%80%E8%89%B2%E5%99%A8/" title="如何为mi添加后处理着色器" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
